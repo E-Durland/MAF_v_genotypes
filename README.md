@@ -78,17 +78,8 @@ for(a in 1:nrow(df)){
 }
 df$dMAF <- d_MAF
 head(df)
-```
----
-  Family cross   Marker day AA AB BB       pAA       pAB        pBB        pA        pB       MAF       dMAF
-1  46x10 AAxAB ucdCg131  11 41 39  0 0.5125000 0.4875000 0.00000000 0.7562500 0.2437500 0.2437500         NA
-2  46x10 AAxAB ucdCg131  16 33 55  0 0.3750000 0.6250000 0.00000000 0.6875000 0.3125000 0.3125000  0.0687500
-4  46x10 ABxAB ucdCg155   1 34 27  8 0.4927536 0.3913043 0.11594203 0.6884058 0.3115942 0.3115942         NA
-5  46x10 ABxAB ucdCg155   5 24 50  8 0.2926829 0.6097561 0.09756098 0.5975610 0.4024390 0.4024390  0.0908448
-6  46x10 ABxAB ucdCg155  10 28 45  9 0.3414634 0.5487805 0.10975610 0.6158537 0.3841463 0.3841463 -0.0182927
-7  46x10 ABxAB ucdCg155  18 30 29 19 0.3846154 0.3717949 0.24358974 0.5705128 0.4294872 0.4294872  0.0453409
----
-```{r}
+
+#pivot and make genotype and allele frequeny subsets
 gtp <- pivot_longer(df[,c(1:10)],
                        cols=pAA:pBB,
                        names_to = "gtp",
@@ -100,7 +91,9 @@ frq <- pivot_longer(df[,c(1:4,11,12)],
                        values_to = "freq")%>%
   as.data.frame()
 ```
-Now that we've transformed the data, let's look at plots.
+## Now that we've transformed the data, let's look at plots.
+
+First, genotype frequency across time
 
 ```{r}
 #genotype frequency
@@ -111,6 +104,8 @@ ggplot(gtp,aes(day,freq))+
   theme_bw()
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_gtp_frq.png)
+
+Next, the frequency of A/B alleles:
 ```{r}
 #frequency of both alleles
 ggplot(frq,aes(day,freq))+
@@ -120,6 +115,9 @@ ggplot(frq,aes(day,freq))+
   theme_bw()
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_al_frq.png)
+
+Now, framing that as change of the minor allele only:
+(minor allele as relative to starting point)
 ```{r}
 #Minor allele frequency acros time:
 ggplot(df,aes(day,MAF))+
@@ -130,6 +128,7 @@ ggplot(df,aes(day,MAF))+
   theme_bw()
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_maf_frq.png)
+Last, what is the relative _change_ in MAF over time
 ```{r}  
 #change in minor allele frequency:
 ggplot(df,aes(day,dMAF))+
@@ -142,3 +141,5 @@ ggplot(df,aes(day,dMAF))+
   theme_bw()
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_dmaf_frq.png)
+
+## We can see that >1/3 of all the markers actually have bi-directional changes in allele frequency (above and below the zero line) across larval development.
