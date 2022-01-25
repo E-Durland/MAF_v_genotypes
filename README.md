@@ -91,9 +91,9 @@ frq <- pivot_longer(df[,c(1:4,11,12)],
                        values_to = "freq")%>%
   as.data.frame()
 ```
-## Now that we've transformed the data, let's look at plots.
+# Now that we've transformed the data, let's look at plots.
 
-First, genotype frequency across time
+## First, genotype frequency across time
 
 ```{r}
 #genotype frequency
@@ -105,7 +105,7 @@ ggplot(gtp,aes(day,freq))+
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_gtp_frq.png)
 
-Next, the frequency of A/B alleles:
+## Next, the frequency of A/B alleles:
 ```{r}
 #frequency of both alleles
 ggplot(frq,aes(day,freq))+
@@ -116,7 +116,7 @@ ggplot(frq,aes(day,freq))+
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_al_frq.png)
 
-Now, framing that as change of the minor allele only:
+## Now, framing that as change of the minor allele only:
 
 (minor allele as relative to starting point)
 ```{r}
@@ -130,7 +130,7 @@ ggplot(df,aes(day,MAF))+
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_maf_frq.png)
 
-# Last, what is the relative _change_ in MAF over time
+## Last, what is the relative _change_ in MAF over time
 ```{r}  
 #change in minor allele frequency:
 ggplot(df,aes(day,dMAF))+
