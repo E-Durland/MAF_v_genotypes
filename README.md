@@ -117,6 +117,7 @@ ggplot(frq,aes(day,freq))+
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_al_frq.png)
 
 Now, framing that as change of the minor allele only:
+
 (minor allele as relative to starting point)
 ```{r}
 #Minor allele frequency acros time:
@@ -128,6 +129,7 @@ ggplot(df,aes(day,MAF))+
   theme_bw()
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_maf_frq.png)
+
 Last, what is the relative _change_ in MAF over time
 ```{r}  
 #change in minor allele frequency:
