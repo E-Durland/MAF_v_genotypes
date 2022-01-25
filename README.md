@@ -1,11 +1,7 @@
 # MAF_v_genotypes
 A re-analysis of genotype data from Plough &amp; Hedgecock (2011) in the framework of MAF changes during larval oyster development.
----
-title: "MAF analysis of genotype data"
-author: "Evan Durland"
-date: "1/25/2022"
-output: html_document
----
+"1/25/2022"
+
 This script takes genotype data supplied in the supplementary information for [Plough & Hedgecock (2011)](https://doi.org/10.1534/genetics.111.131854) and re-analyzes it within a framework of minor allele frequency (MAF) changes over larval oyster development.
 
 *note:  The markers used in this analysis are a subset of the larger marker set used in that study. Filtering criteria was:
