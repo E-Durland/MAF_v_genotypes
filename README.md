@@ -8,7 +8,7 @@ This script takes genotype data supplied in the supplementary information for [P
 1) Bi-allelic markers
 2) \>=3 time points during larval development (0-45 days post fertilization)
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 ```{r}
