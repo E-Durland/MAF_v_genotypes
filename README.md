@@ -130,7 +130,7 @@ ggplot(df,aes(day,MAF))+
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_maf_frq.png)
 
-Last, what is the relative _change_ in MAF over time
+# Last, what is the relative _change_ in MAF over time
 ```{r}  
 #change in minor allele frequency:
 ggplot(df,aes(day,dMAF))+
@@ -144,4 +144,4 @@ ggplot(df,aes(day,dMAF))+
 ```
 ![](https://github.com/E-Durland/MAF_v_genotypes/blob/main/BA_dmaf_frq.png)
 
-## We can see that >1/3 of all the markers actually have bi-directional changes in allele frequency (above and below the zero line) across larval development.
+## We can see that 7/12 (~58%) actually have bi-directional changes in allele frequency (above and below the zero line) across larval development.
