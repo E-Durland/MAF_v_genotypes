@@ -6,7 +6,7 @@ This script takes genotype data supplied in the supplementary information for [P
 
 *note:  The markers used in this analysis are a subset of the larger marker set used in that study. Filtering criteria was:
 1) Bi-allelic markers
-2) >=3 time points during larval development (0-45 days post fertilization)
+2) \>=3 time points during larval development (0-45 days post fertilization)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
